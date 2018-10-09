@@ -346,7 +346,7 @@ def list2file(l, f, depth=1):
 def _get_from_parsed(parsed_str):
     try:
         parsed_str = parsed_str.strip()
-    except:
+    except Exception:
         return None
     return ([parsed_str[1:-1]] if (
         parsed_str[0] == parsed_str[-1] and parsed_str[0] in ("'", '"')) else (

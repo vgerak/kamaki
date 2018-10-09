@@ -51,6 +51,7 @@ def _2steps_gen(limit=2):
         counter += 1
         yield ret
 
+
 _2value_gen = _2steps_gen()
 
 

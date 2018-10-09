@@ -74,6 +74,7 @@ class FR(object):
     status = None
     status_code = 200
 
+
 astakos_pkg = 'kamaki.clients.astakos'
 
 

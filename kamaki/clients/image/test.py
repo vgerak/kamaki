@@ -148,6 +148,7 @@ class FR(object):
     status = None
     status_code = 200
 
+
 image_pkg = 'kamaki.clients.image.ImageClient'
 
 

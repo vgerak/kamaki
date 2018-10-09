@@ -324,6 +324,7 @@ class CycladesComputeClient(CycladesComputeRestClient, Waiter):
         r = self.servers_tag_exists(server_id, tag, success=204)
         return r.headers['tag-status']
 
+
 # Backwards compatibility - will be removed in 0.15
 CycladesClient = CycladesComputeClient
 

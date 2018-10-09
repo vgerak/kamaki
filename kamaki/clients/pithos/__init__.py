@@ -379,7 +379,7 @@ class PithosClient(PithosRestClient):
                 elif upload_gen:
                     try:
                         upload_gen.next()
-                    except:
+                    except Exception:
                         pass
             flying = unfinished
 
@@ -390,7 +390,7 @@ class PithosClient(PithosRestClient):
             elif upload_gen:
                 try:
                     upload_gen.next()
-                except:
+                except Exception:
                     pass
 
         return [failure.kwargs['hash'] for failure in failures]
@@ -486,7 +486,7 @@ class PithosClient(PithosRestClient):
             for i in range(len(hashmap['hashes']) + 1 - len(missing)):
                 try:
                     upload_gen.next()
-                except:
+                except Exception:
                     LOG.debug('Progress bar failure')
                     break
         else:
@@ -1011,14 +1011,14 @@ class PithosClient(PithosRestClient):
             try:
                 for i in xrange(step):
                     self.progress_bar_gen.next()
-            except:
+            except Exception:
                 pass
 
     def _complete_cb(self):
         while True:
             try:
                 self.progress_bar_gen.next()
-            except:
+            except Exception:
                 break
 
     def get_object_hashmap(

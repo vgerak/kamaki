@@ -1823,6 +1823,7 @@ class PithosClient(TestCase):
         get.assert_called_once_with(obj, format='json', version='list')
         self.assertEqual(r, info['versions'])
 
+
 if __name__ == '__main__':
     from sys import argv
     from kamaki.clients.test import runTestCase

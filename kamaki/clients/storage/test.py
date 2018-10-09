@@ -425,6 +425,7 @@ class StorageClient(TestCase):
         FR.status_code = 404
         self.assertRaises(ClientError, self.client.list_objects)
 
+
 if __name__ == '__main__':
     from sys import argv
     from kamaki.clients.test import runTestCase

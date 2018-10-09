@@ -87,6 +87,7 @@ class FR(object):
     status = None
     status_code = 200
 
+
 rest_pkg = 'kamaki.clients.cyclades.CycladesComputeRestClient'
 cyclades_pkg = 'kamaki.clients.cyclades.CycladesComputeClient'
 

@@ -591,7 +591,7 @@ class Client(Logged):
                 status_msg = getattr(r, 'status', '')
                 try:
                     message = u'%s %s\n' % (status_msg, r.text)
-                except:
+                except Exception:
                     message = u'%s %s\n' % (status_msg, r)
                 status = getattr(r, 'status_code', getattr(r, 'status', 0))
                 raise ClientError(message, status=status)
@@ -701,7 +701,7 @@ class Waiter(object):
                 try:
                     for i in range(max_wait):
                         wait_gen.next()
-                except:
+                except Exception:
                     pass
         finished = wait_until_status ^ (status != wait_status)
         return status if finished else False

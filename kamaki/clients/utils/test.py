@@ -49,6 +49,7 @@ def _try(assertfoo, foo, *args):
         print('::: Method %s failed with args %s' % (foo, argstr))
         raise
 
+
 filter_examples = [
     ('', dict(), dict(), dict()),
     (
@@ -156,6 +157,7 @@ class Utils(TestCase):
                 orig_str = word1 + orig_char + word2
                 esc_str = word1 + esc_char + word2
                 self.assertEqual(utils.escape_ctrl_chars(orig_str), esc_str)
+
 
 if __name__ == '__main__':
     from sys import argv

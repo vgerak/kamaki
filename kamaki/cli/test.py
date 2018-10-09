@@ -238,8 +238,8 @@ class LoggerMethods(TestCase):
             self.assertEqual(len(self.PseudoLogger._addHandler_calls), cnt)
             h = self.PseudoLogger._addHandler_calls[-1]
             self.assertTrue(isinstance(h[0], self.PseudoHandler))
-            l = self.PseudoLogger._setLevel_calls[-1]
-            self.assertEqual(l, (level or DEBUG, ))
+            lvl = self.PseudoLogger._setLevel_calls[-1]
+            self.assertEqual(lvl, (level or DEBUG, ))
 
     @patch('kamaki.cli.logger.get_log_filename', return_value='my log fname')
     @patch('kamaki.cli.logger.get_logger', return_value='my get logger ret')
