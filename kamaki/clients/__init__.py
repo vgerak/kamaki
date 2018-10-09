@@ -402,7 +402,7 @@ def strip_version(url):
     ver = ""
     # remove trailing '/' if present
     url = url.rstrip('/')
-    m = re.search('/v(\d+(?:\.\d*)?)$', url)
+    m = re.search(r'/v(\d+(?:\.\d*)?)$', url)
     if m:
         ver = m.group(1)
     return (url[:len(url)-len(ver)], ver)

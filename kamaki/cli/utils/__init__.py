@@ -356,7 +356,7 @@ def _get_from_parsed(parsed_str):
 def split_input(line):
     terms = []
     if line:
-        rprs = regex_compile('\'.*?\'|".*?"|^[\S]*$')
+        rprs = regex_compile(r'\'.*?\'|".*?"|^[\S]*$')
         trivial_parts, interesting_parts = rprs.split(line), rprs.findall(line)
         assert(len(trivial_parts) == 1 + len(interesting_parts))
         for i, tpart in enumerate(trivial_parts):

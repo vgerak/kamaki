@@ -240,7 +240,7 @@ class Config(RawConfigParser):
     def cloud_name(full_section_name):
         if not full_section_name.startswith(CLOUD_PREFIX + ' '):
             return None
-        matcher = match(CLOUD_PREFIX + ' "([~@#$.:\-\w]+)"', full_section_name)
+        matcher = match(CLOUD_PREFIX + r' "([~@#$.:\-\w]+)"', full_section_name)
         if matcher:
             return matcher.groups()[0]
         else:
